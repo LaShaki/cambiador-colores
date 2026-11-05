@@ -1,37 +1,30 @@
-const botonLavanda = document.querySelector("#lavanda");
-botonLavanda.addEventListener("click", function(){
-    cambiarColor("lavender");
-});
-
-const botonRosa = document.querySelector("#rosa");
-botonRosa.addEventListener("click", function(){
-    cambiarColor("pink");
-});
-
-const botonVerde = document.querySelector("#verde");
-botonVerde.addEventListener("click", function(){
-    cambiarColor("green");
-});
-
+const botones = document.querySelectorAll("[data-color]");
 const mensaje = document.querySelector("#mensaje");
 
+const mensajes = {
+    lavender: "Has elegido el lavanda, me encanta!",
+    pink: "Has elegido el rosa, maravilloso!",
+    green: "Has elegido el verde, un color único!",
+    blue: "Haz elegido el azulito"
+};
 
-function cambiarColor(color){
-    switch(color){
-        case "lavender":
-            document.body.style.backgroundColor = "lavender";
-            mensaje.textContent = "Has elegido el lavanda, me encanta";
-            break;
-        case "pink":
-            document.body.style.backgroundColor = "pink";
-            mensaje.textContent= "El rosa te sienta de maravilla!";
-            break;
-        case "green":
-            document.body.style.backgroundColor = "green";
-            mensaje.textContent = "Este color tiene personalidad, no?";
-            break;
-        default:
-            console.log("Color no reconocido");
+botones.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+        cambiarColor(boton.dataset.color);
+    });
+});
+
+
+function cambiarColor(color) {
+
+    if(mensajes[color] !== undefined){
+        document.body.style.backgroundColor = color;
+        mensaje.textContent = mensajes[color];
+    }else{
+        console.log("Color no reconocido");
     }
 }
 
+console.log(mensajes.lavender);
+console.log(mensajes.pink);
+console.log(mensajes.green);
