@@ -20,11 +20,11 @@ function cambiarColor(color){
     switch(color){
         case "lavender":
             document.body.style.backgroundColor = "lavender";
-            mensaje.textContent = "Has elegido el lavanda, qué bonito!";
+            mensaje.textContent = "Has elegido el lavanda, me encanta";
             break;
         case "pink":
             document.body.style.backgroundColor = "pink";
-            mensaje.textContent= "El rosa te sienta fenomenal!";
+            mensaje.textContent= "El rosa te sienta de maravilla!";
             break;
         case "green":
             document.body.style.backgroundColor = "green";
